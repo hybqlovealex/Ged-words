@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GED Trainer — Single File Version</title>
+<style>
+body{background:#0d1117;color:#c9d1d9;font-family:-apple-system,Arial;margin:20px;}
+.card{background:#161b22;padding:20px;border-radius:12px;margin-top:20px;}
+.btn{padding:6px 12px;border-radius:6px;background:#238636;color:#fff;border:none;margin:4px;cursor:pointer;}
+.input{padding:6px;width:200px;border-radius:6px;border:1px solid #30363d;background:#0d1117;color:#fff;}
+</style>
+</head>
+<body>
+<h1>GED Trainer</h1>
+
+<div class="card">
+    <input id="search" class="input" placeholder="搜索英文" />
+    <button class="btn" onclick="showAll()">显示全部</button>
+    <button class="btn" onclick="randomOne()">抽1词</button>
+</div>
+
+<div class="card">
+    <h3>结果</h3>
+    <div id="out"></div>
+</div>
+
+<script>
+let words = [];
+
+async function loadData(){
+    const resp = await fetch("data.json");
+    words = await resp.json();
+}
+loadData();
+
+function showAll(){
+    out.innerHTML = words.map(w=>`${w.cn} — ${w.en}`).join("<br>");
+}
+
+function randomOne(){
+    if(words.length===0) return;
+    const w = words[Math.floor(Math.random()*words.length)];
+    out.innerHTML = `<b>${w.en}</b><br>${w.cn}<br>例：${w.example_en}<br>中：${w.example_cn}`;
+}
+</script>
+
+</body>
+</html>
