@@ -1,0 +1,23 @@
+:root{--bg:#071028;--card:#0b1220;--muted:#9aa4b2;--accent:#60a5fa;--text:#e6eef6;--primary:#7c3aed}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);margin:0;padding:18px}
+.container{max-width:1100px;margin:0 auto}
+header h1{margin:0;font-size:28px}
+.sub{color:var(--muted);margin-top:6px}
+.controls{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.controls input{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;width:100%}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px}
+.btn{background:#10243a;border:none;color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff}
+.main{display:flex;gap:16px}
+.list{flex:1;max-height:640px;overflow:auto;padding:12px;background:rgba(255,255,255,0.02);border-radius:8px}
+.play{flex:1.5;padding:18px;background:var(--card);border-radius:10px;min-height:320px}
+.word-row{padding:10px;border-bottom:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+.card{background:#0f1724;padding:12px;border-radius:8px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:#0b1220;color:var(--text);padding:10px 16px;border-radius:8px;display:none;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.small{font-size:13px;color:var(--muted)}
+.choice{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.choice button{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);cursor:pointer;text-align:left}
+.match-grid{display:flex;gap:20px}
+.col{flex:1}
+.col .item{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);margin-bottom:8px;cursor:pointer;background:rgba(255,255,255,0.01)}
