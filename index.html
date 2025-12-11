@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GED Trainer — Dark Final</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container">
+  <header><h1>GED Trainer</h1><p class="sub">深色版 — 英→中 / 中→英 选择题 & 连连看</p></header>
+  <section class="controls">
+    <input id="search" placeholder="搜索英文或中文（回车）" />
+    <div class="btnrow">
+      <button id="btnShowAll" class="btn">显示全部</button>
+      <button id="btnFlash" class="btn">抽认卡</button>
+      <button id="btnQuizEN" class="btn primary">选择题：英→中</button>
+      <button id="btnQuizCN" class="btn primary">选择题：中→英</button>
+      <button id="btnMatch" class="btn">单词连连看</button>
+      <button id="btnExport" class="btn">导出 CSV</button>
+    </div>
+  </section>
+  <main class="main">
+    <aside id="wordList" class="list"></aside>
+    <section id="playArea" class="play">点击上方按钮开始练习。</section>
+  </main>
+</div>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
